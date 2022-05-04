@@ -16,7 +16,7 @@
 
 h1{
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
 }
 
 #restartButton{
@@ -27,8 +27,8 @@ h1{
     width:7rem;
     border-radius: 50px;
     font-family: 'Press Start 2P';
+    z-index: 1;
 }
-
 
 body{
     margin: 0;
@@ -68,16 +68,31 @@ body{
     height:100px;
     width: 162px;
 }
+
+#dog:hover,
+#cat:hover {
+cursor: pointer;
+}
+
 .game-board{
-    margin:0 auto;
+    margin: 0 auto;
     width: 25vw;
-    height: 25vh;
+    height: 20vh;
     display: grid;
     justify-content: center;
     justify-items:center;
     align-content: center;
     align-items:center;
     grid-template-columns: repeat(3, auto);
+}
+
+.game-board.x .box:not(.x):not(.y):hover{
+    content: url(/images/PirateNyanCat.gif);
+    background-color:lightpink;
+}
+.game-board.y .box:not(.x):not(.y):hover{
+    content: url(/images/fiesta-dog.gif);
+    background-color:turquoise;
 }
 
 #playButton{
@@ -100,15 +115,61 @@ body{
 .box{
     width:var(--box-size);
     height:var(--box-size);
-    border:3px solid black;
-    /* display:flex;
+    border:5px solid black;
+    box-shadow: 0px 0px 0px 5px;
+    color: black;
+    display:flex;
     justify-content: center;
-    align-items:center; */
+    align-items:center;
+    cursor: grabbing;
 }
 
-.box:hover{
-    background-color:turquoise;
+.box.x,
+.box.y {
+    cursor:not-allowed;
 }
+
+/* .box:hover{
+    background-color:turquoise;
+} */
+
+.box.x{
+    content: url(/images/PirateNyanCat.gif);
+}
+
+.box.y{
+    content: url(/images/fiesta-dog.gif);
+}
+
+.win-message{
+    display:none;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.win-message.show{
+    display:flex;
+}
+
+/* TO BE COMPLETED LATER */
+
+
+/* .win-message button{
+    font-size: 3rem;
+    border: 1px solid black;
+    cursor:pointer
+}
+
+.win-message button:hover{
+    background:black
+} */
 
 
 /* ==== TO REMOVE BORDERS OF BOXES ===== */
@@ -133,13 +194,12 @@ border-top: none;
 .box:nth-child(8),
 .box:nth-child(7) {
 border-bottom: none;
-} */
+}  */
 
-/* 
-.box.nyancat{
+
+/* .box.nyancat{
     
-} */
-
+}  */
 
 
 
