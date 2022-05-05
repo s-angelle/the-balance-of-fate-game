@@ -1,32 +1,43 @@
 const nyanCatPlayer = 'x';
-const TacoDogPlayer = 'y';
+const tacoDogPlayer = 'y';
+const nyanCatImage = document.getElementById('cat')
+const tacoDogImage = document.getElementById('dog')
 const winningCombos = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
 ];
 const boxElements = document.querySelectorAll('[data-box]');
 const gameBoard = document.getElementById('gameBoard')
+
+const startWindow = document.getElementById('startWindow')
+const startWindowTxt = document.querySelector('[data-start-window-text]')
+
 const winMessage = document.getElementById('winMessage')
 const restartButton = document.getElementById('restartButton')
+const playButton = document.getElementById('playButton')
 const winMessageTxt = document.querySelector('[data-win-message-text]')
 let isTacoDogPlayerTurn 
+
+function displayGameWindow(){
+ startWindow.classList.remove('show')
+}
 
 startPlay();
 
 function startPlay(){
-    let isNyanDogPlayerTurn =  false;
+    let isTacoDogPlayerTurn = false;
     boxElements.forEach(box => {
         box.classList.remove(nyanCatPlayer)
-        box.classList.remove(TacoDogPlayer)
+        box.classList.remove(tacoDogPlayer)
         box.addEventListener('click', handleClick, {once: true})
     })
-    setBoardHoverPlayer()
+    setBoardHoverPlayer() 
     winMessage.classList.remove('show')
+    
 }
-
 
 function handleClick(e) {
     const box = e.target
-    const currentPlayer = isTacoDogPlayerTurn ? TacoDogPlayer : nyanCatPlayer
+    const currentPlayer = isTacoDogPlayerTurn ? tacoDogPlayer : nyanCatPlayer
     placeMark(box, currentPlayer)
     if(checkWin(currentPlayer)) {
         endGame(false)
@@ -43,16 +54,16 @@ function handleClick(e) {
 
 function endGame(draw){
 if (draw) {
-winMessageTxt.innerText = 'Draw!!'
+winMessageTxt.innerText = ` It's a Draw!!`
 } else {
-    winMessageTxt.innerText = `${isTacoDogPlayerTurn ? "Taco Dog" : 'Nyan Cat'} Wins !!`
+    winMessageTxt.innerHTML = `${isTacoDogPlayerTurn ? `Taco Dog` : `Nyan Cat`} Wins !!`
 } 
     winMessage.classList.add('show')
 }
 
 function isDraw(){
     return [...boxElements].every(box =>{
-        return box.classList.contains(nyanCatPlayer) || box.classList.contains(TacoDogPlayer)
+        return box.classList.contains(nyanCatPlayer) || box.classList.contains(tacoDogPlayer)
     } );{
     }
 }
@@ -67,9 +78,9 @@ function switchTurns(){
 
 function setBoardHoverPlayer(){
     gameBoard.classList.remove(nyanCatPlayer)
-    gameBoard.classList.remove(TacoDogPlayer)
+    gameBoard.classList.remove(tacoDogPlayer)
     if(isTacoDogPlayerTurn){
-        gameBoard.classList.add(TacoDogPlayer)
+        gameBoard.classList.add(tacoDogPlayer)
     } else {
         gameBoard.classList.add(nyanCatPlayer)
     }
@@ -84,3 +95,7 @@ return winningCombos.some(combo => {
 }
 
 restartButton.addEventListener('click', startPlay);
+
+playButton.addEventListener('click', displayGameWindow)
+
+

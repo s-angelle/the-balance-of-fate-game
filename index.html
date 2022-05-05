@@ -16,17 +16,29 @@
 
   <body>
     <div class="heading">
-      <audio id="theme-song" muted autoplay>
+      <audio id="theme-song" controls autoplay loop>
         <source src="/audio/retro-space-music.mp3" type="audio/mpeg" />
       </audio>
       <h1>The Balance of Fate Game v. 2062</h1>
       <button id="restartButton">Restart</button>
     </div>
 
-    <div class="players">
-      <div class="blink_me">
-        <p>Choose your fighter</p>
+    <div class="start-window show" id="startWindow">
+      <div id="startup-txt" data-start-window-text>
+        <div class="blink_me">
+          <h2 id="initial-header">Welcome to THE BALANCE OF FATE V. 2062</h2>
+        </div>
+        <p id="first-p">
+          This game is to be played like Tic-Tac-Toe. Nyan Cat is PLAYER 1. Taco
+          Dog is PLAYER 2. PLAYER 1 makes the first move. The goal is to match 3
+          copies of your character in a row (up, down, across, or diagonally).
+          The first player to match 3 copies of their character WINS.
+        </p>
       </div>
+    </div>
+
+    <div class="players">
+      <p id="battle-display">Nyan Cat v. Taco Dog</p>
       <img id="cat" src="/images/PirateNyanCat.gif" alt="" data-id="x" />
       <img id="dog" src="/images/fiesta-dog.gif" alt="" data-id="y" />
     </div>
@@ -43,6 +55,8 @@
       <div class="box" data-box></div>
       <button class="play-btn" id="playButton">Play</button>
     </div>
+
+    <img id="personal-logo" src="/images/SA.gif" alt="" />
 
     <div class="win-message" id="winMessage">
       <div data-win-message-text></div>
