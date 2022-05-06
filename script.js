@@ -17,7 +17,7 @@ const winMessage = document.getElementById('winMessage');
 const winMessageTxt = document.querySelector('[data-win-message-text]');
 const restartButton = document.getElementById('restartButton');
 const playButton = document.getElementById('playButton');
-let isTacoDogPlayerTurn; 
+let isTacoDogPlayerTurn = false;
 
 
 // Creating a function to remove initial start-up screen. On line 169, this function is called upon when the player clicks the "play" button.
@@ -115,7 +115,7 @@ function handleClick(e) {
 
     const box = e.target;
 
-    const currentPlayer = isTacoDogPlayerTurn ? tacoDogPlayer : nyanCatPlayer;
+    let currentPlayer = isTacoDogPlayerTurn ? tacoDogPlayer : nyanCatPlayer;
 
     placeMark(box, currentPlayer);
 
@@ -143,7 +143,7 @@ startPlay();
 
 function startPlay() {
 
-    let isTacoDogPlayerTurn = false;
+    isTacoDogPlayerTurn = false;
 
     boxElements.forEach(box => {
 
