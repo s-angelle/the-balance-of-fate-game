@@ -1,210 +1,75 @@
+/* MAIN SETTINGS */
 
-*, ::after, ::before{
+* {
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --box-size: 150px;
     --character-size: calc(var(var(--box-size) * .8));
 }
 
-.heading{
-    display:flex;
-    justify-content: center;
-    flex-direction: row-reverse;
-}
-
-h1{
-    text-align: center;
-    margin-top: 4.5rem;
-}
-
-#restartButton{
-    position:fixed;
-    top:3%;
-    left:1%;
-    height:3rem;
-    width:7rem;
-    border-radius: 50px;
-    font-family: 'Press Start 2P';
-    z-index: 3;
-}
-
-body{
+body {
     margin: 0;
     background: url(/images/space.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Press Start 2P';
-    color:white;
+    color: white;
+}
+
+/* INITIAL STARTUP WINDOW */
+
+.start-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    background: url(/images/galaxy-bg2.gif) 100%;
+    background-size: cover;
+    z-index: 1;
 }
 
 
-.players{
-    margin-top: 7rem;
-    margin-left: 3rem;
-    display:flex;
-    justify-content: start;
-    flex-direction: column; 
+.start-window.show {
+    display: flex;
 }
 
-.blink_me {
-    animation: blinker 1.5s linear;
-  } 
-  
-  @keyframes blinker {
+@keyframes blinker {
     50% {
       opacity: 0;
     }
   }
 
-#dog {
-    margin-left:5%;
-    height:75px;
-    width:150px;
-}
+.blink_me {
+    animation: blinker 2s linear;
+  } 
+  
 
-#cat{
-    margin-left:5%;
-    height:100px;
-    width: 162px;
-}
-
-#dog:hover,
-#cat:hover {
-cursor: pointer;
-}
-
-.game-board{
-    margin: 0 auto;
-    width: 25vw;
-    height: 22vh;
-    display: grid;
-    justify-content: center;
-    justify-items:center;
-    align-content: center;
-    align-items:center;
-    grid-template-columns: repeat(3, auto);
-}
-
-.game-board.x .box:not(.x):not(.y):hover{
-    content: url(/images/PirateNyanCat.gif);
-    background-color:lightpink;
-}
-.game-board.y .box:not(.x):not(.y):hover{
-    content: url(/images/fiesta-dog.gif);
-    background-color:turquoise;
-}
-
-#playButton{
-    grid-column: 2/3;
-    margin-top: 6%;
-    height:3rem;
-    width:7rem;
-    border-radius: 50px;
-    background-color: white;
-    font-family: 'Press Start 2P';
-    color:black;
-    z-index: 1;
-}
-
-#playButton:hover,
-#restartButton:hover{
-    background-color: turquoise;
-    color:white;
-}
-
-.box{
-    width:var(--box-size);
-    height:var(--box-size);
-    border:5px solid black;
-    box-shadow: 5px 5px 5px 2px;
-    color: black;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    cursor: grabbing;
-}
-
-.box.x,
-.box.y {
-    cursor:not-allowed;
-}
-
-/* .box:hover{
-    background-color:turquoise;
-} */
-
-.box.x{
-    content: url(/images/PirateNyanCat.gif);
-}
-
-.box.y{
-    content: url(/images/fiesta-dog.gif);
-}
-
-.win-message{
-    display:none;
-    position:fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(/images/space-gif-bg-2.gif) 100%;
-    background-size: cover;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
-}
-
-.win-message.show{
-    display:flex;
-}
-
-.start-window {
-    display:none;
-    position:fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background-color: rgba(0, 0, 0, .95); */
-    background: url(/images/galaxy-bg2.gif) 100%;
-    background-size: cover;
-    justify-content: center;
-    z-index: 1;
-    padding: 5px;
-    text-align: center;
-}
-
-#initial-header{
-    /* margin: 10 auto; */
+#initial-header {
     margin-top: 10%;
 }
 
-
-.start-window.show{
-    display:flex;
+#first-p {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 4rem;
 }
 
-#first-p{
-margin-top: 10%;
-margin-left: 10%;
-margin-right: 10%;
-line-height: 4rem;
+.heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
 }
 
-#personal-logo{
-    position:fixed;
-    top:84%;
-    left:90.5%;
-    height: 7em;
-    width: 7em;
-    z-index: 1;
-    border-radius: 5px;
-    opacity: 80%;
-}
+/* AUDIO SETTINGS */
 
- audio{
+audio {
     position: fixed;
     top: 3%;
     left: 91%;
@@ -215,18 +80,159 @@ line-height: 4rem;
     z-index: 6;
 } 
 
-/* height: 7em;
-width: 8.4em;
-
-audio::-webkit-media-controls-panel{
-} */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline {
+    display: none;
+}
 
 audio::-webkit-media-controls-panel:hover {
     background-color: turquoise;
 }
 
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-timeline{
-    display:none;
+/* RESTART BUTTON SETTINGS */
+
+#restartButton {
+    position: fixed;
+    top: 3%;
+    left: 1%;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 50px;
+    font-family: 'Press Start 2P';
+    z-index: 3;
+}
+
+/* MAIN GAME WINDOW */
+
+h1 {
+    text-align: center;
+    margin-top: 4.5rem;
+}
+
+.players {
+    display: flex;
+    justify-content: start;
+    flex-direction: column; 
+    margin-top: 7rem;
+    margin-left: 3rem;
+}
+
+#cat {
+    margin-left: 5%;
+    height: 100px;
+    width: 162px;
+}
+
+#dog {
+    margin-left: 5%;
+    height: 75px;
+    width: 150px;
+}
+
+#cat:hover,
+#dog:hover {
+    cursor: pointer;
+
+}
+
+/* GAMEBOARD AND BOX SETTINGS */
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 25vw;
+    height: 22vh;
+}
+
+.game-board.x .box:not(.x):not(.y):hover {
+    content: url(/images/PirateNyanCat.gif);
+    background-color: lightpink;
+}
+.game-board.y .box:not(.x):not(.y):hover {
+    content: url(/images/fiesta-dog.gif);
+    background-color: turquoise;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--box-size);
+    width: var(--box-size);
+    border: 5px solid black;
+    box-shadow: 5px 5px 5px 2px;
+    color: black;
+    cursor: grabbing;
+}
+
+.box.x,
+.box.y {
+    cursor: not-allowed;
+}
+
+.box.x {
+    content: url(/images/PirateNyanCat.gif);
+}
+
+.box.y {
+    content: url(/images/fiesta-dog.gif);
+}
+
+/* PLAY BUTTON SETTINGS */
+
+#playButton {
+    grid-column: 2/3;
+    margin-top: 6%;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    font-family: 'Press Start 2P';
+    z-index: 1;
+}
+
+#playButton:hover,
+#restartButton:hover {
+    background-color: turquoise;
+    color:white;
+}
+
+/* WIN / LOSE / DRAW WINDOW */
+
+.win-message {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(/images/space-gif-bg-2.gif) 100%;
+    background-size: cover;
+}
+
+.win-message.show {
+    display: flex;
+}
+
+/* PERSONAL LOGO */
+
+#personal-logo {
+    position: fixed;
+    top: 84%;
+    left: 90.5%;
+    height: 7em;
+    width: 7em;
+    border-radius: 20px;
+    opacity: 80%;
+    z-index: 1;
 }
