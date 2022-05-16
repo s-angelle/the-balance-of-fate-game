@@ -26,7 +26,7 @@ function displayGameWindow() {
 
  startWindow.classList.remove('show');
 
-};
+}
 
 
 // Creating a function that will display a player's character once the player hovers over a box with their character. This can only happen if it is the player's turn.
@@ -39,13 +39,13 @@ function setBoardHoverPlayer() {
     
     if (isTacoDogPlayerTurn) {
         
-        gameBoard.classList.add(tacoDogPlayer)
+        gameBoard.classList.add(tacoDogPlayer);
         
     } else {
         
-        gameBoard.classList.add(nyanCatPlayer)
-    };
-};
+        gameBoard.classList.add(nyanCatPlayer);
+    }
+}
 
 
 // Creating a function that will mark/display the current player's character into a box.  
@@ -53,7 +53,7 @@ function setBoardHoverPlayer() {
 function placeMark(box, currentPlayer) {
     
     box.classList.add(currentPlayer);
-};
+}
 
 
 // Creating a function that will switch turns.
@@ -61,7 +61,7 @@ function placeMark(box, currentPlayer) {
 function switchTurns() {
     
     isTacoDogPlayerTurn = !isTacoDogPlayerTurn;
-};
+}
 
 
 // Creating a function that will check the win/lose status of the game by determining if the box elements' character meets the criteria of the previously assigned winning combos array. 
@@ -72,11 +72,11 @@ return winningCombos.some(combo => {
 
     return combo.every(index => {
 
-        return boxElements[index].classList.contains(currentPlayer)
-    });
-});
+        return boxElements[index].classList.contains(currentPlayer);
+    })
+})
 
-};
+}
 
 
 // Creating a function that will determine whether the game board fits the criteria of being a draw.
@@ -85,9 +85,9 @@ function isDraw() {
     
     return [...boxElements].every(box =>{
         
-        return box.classList.contains(nyanCatPlayer) || box.classList.contains(tacoDogPlayer)
-    });
-};
+        return box.classList.contains(nyanCatPlayer) || box.classList.contains(tacoDogPlayer);
+    })
+}
 
 
 // Creating a function that will display the winning message and text upon a player winning. It also displays a message in the result of a draw.
@@ -96,17 +96,17 @@ function endGame(draw) {
 
     if (draw) {
 
-    winMessageTxt.innerText = ` It's a Draw!!`
+    winMessageTxt.innerText = ` It's a Draw!!`;
 
     } else {
 
-    winMessageTxt.innerHTML = `${isTacoDogPlayerTurn ? `Taco Dog` : `Nyan Cat`} Wins !!`
+    winMessageTxt.innerHTML = `${isTacoDogPlayerTurn ? `Taco Dog` : `Nyan Cat`} Wins !!`;
 
-    };
+    }
 
     winMessage.classList.add('show');
 
-};
+}
 
 
 // Creating a function that will implement the aforementioned placeMark function. This function will also register each player's click, while simultaneously checking the win/lose/draw status of the game. If no player has won, the game will proceed to the next player's turn. 
@@ -132,9 +132,9 @@ function handleClick(e) {
         switchTurns();
 
         setBoardHoverPlayer();
-    };
+    }
 
-};
+}
 
 
 // Creating a function that will "start" the game and implement the handleClick function. A for loop is also established to reset the game. On line 167, this will happen upon a player clicking the "restart" button.
@@ -151,15 +151,15 @@ function startPlay() {
 
         box.classList.remove(tacoDogPlayer);
         
-        box.addEventListener('click', handleClick, {once: true})
+        box.addEventListener('click', handleClick, {once: true});
 
-    });    
+    })   
 
     setBoardHoverPlayer();
 
     winMessage.classList.remove('show');
     
-};    
+}    
 
 
 // Adding event listeners to that will implement previously mentioned functions when a player clicks either the "play" or "restart" button.
