@@ -7,7 +7,7 @@ Game Goals:
 
 1. Must be a two-player browser game (either against the computer or against another player)
 2. A winning state - a way for the player to win the game
-3. A lose state - a way for the plaver to lose the game
+3. A lose state - a way for the player to lose the game
 4. A way to keep playing if the game is not over
 5. Multiple rounds to play - a round must begin / end
 6. There must be a way to check if the game should
