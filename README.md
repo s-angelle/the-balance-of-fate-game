@@ -9,7 +9,7 @@ Game Goals:
 2. A winning state - a way for the player to win the game
 3. A lose state - a wav for the plaver to lose the game
 4. A way to keep playing if the game is not over
-5. Multiple rounds to play - around must begin, end, and there must be a way to check it the game shoulc
+5. Multiple rounds to play - a round must begin, end, and there must be a way to check it the game should
 continue or the overall game is won or lost
 
 Stretch Goals:
