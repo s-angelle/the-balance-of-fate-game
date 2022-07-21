@@ -3,6 +3,10 @@
 
 This game is going to be my personal, creative rendering of a well-known classic, Tic-Tac-Toe. I wanted to make the game different, quirky, and fun. It intentionally has a very retro look, and personally reminds me of a game you might encounter while playing in an arcade in the 90's. (If the sound isn't automatically playing in your browser (it should be), press play on the top right to enjoy some retro gaming vibes!)
 
+## How to Play the Game 
+
+Enjoy the game here: https://the-balance-of-fate-game.netlify.app
+
 ## Game Goals:
 
 1. Must be a two-player browser game (either against the computer or against another player)
