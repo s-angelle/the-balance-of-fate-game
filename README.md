@@ -1,5 +1,6 @@
 ## WELCOME TO THE BALANCE OF FATE GAME V. 2062
 
+** This game is meant to be played in FULL-SCREEN **
 
 This game is going to be my personal, creative rendering of a well-known classic, Tic-Tac-Toe. I wanted to make the game different, quirky, and fun. It intentionally has a very retro look, and personally reminds me of a game you might encounter while playing in an arcade in the 90's. (If the sound isn't automatically playing in your browser (it should be), press play on the top right to enjoy some retro gaming vibes)!
 
