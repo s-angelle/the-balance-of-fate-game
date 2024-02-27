@@ -1,6 +1,8 @@
 ## WELCOME TO THE BALANCE OF FATE GAME V. 2062
 
-This game is going to be my personal, creative rendering of a well-known classic, Tic-Tac-Toe. I wanted to make the game different, quirky, and fun. It intentionally has a very retro look, and personally reminds me of a game you might encounter while playing in an arcade in the 90's. (If the sound isn't automatically playing in your browser (it should be), press play on the top right to enjoy some retro gaming vibes)!
+** This game is meant to be played in FULL-SCREEN **
+
+This game is my personal, creative rendering of a well-known classic, Tic-Tac-Toe. I wanted to make the game different, quirky, and fun. It intentionally has a very retro look, and personally reminds me of a game you might encounter while playing in an arcade in the 90's. (If the sound isn't automatically playing in your browser (it should be), press play on the top right to enjoy some retro gaming vibes)!
 
 ## How to Access the Game
 
@@ -22,8 +24,3 @@ Enjoy the game here: https://the-balance-of-fate-game.netlify.app
 2. CSS to give your game a personal and fun style (ACHIEVED)
 3. Responsive mobile design
 4. Determine a way for CPU to play against a player.
-
-## Areas of improvement:
-
-1. A way to make the audio controls reliable (sometimes it doesn't automatically play upon user initially opening the page, although, per the code specified in the html, it should).
-2. More JavaScript to enhance CSS, such as a drag and drop event for the characters
