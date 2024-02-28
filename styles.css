@@ -14,7 +14,8 @@ body {
     background: url(/images/space.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Press Start 2P';
-    color: white;
+    color: white; 
+    overflow-y: hidden;
 }
 
 /* INITIAL STARTUP WINDOW */
@@ -51,6 +52,7 @@ body {
   
 
 #initial-header {
+    display:fixed;
     margin-top: 10%;
 }
 
