@@ -15,7 +15,9 @@ body {
     background-size: cover;
     font-family: 'Press Start 2P';
     color: white; 
+    height: 100%;
     overflow-y: hidden;
+
 }
 
 /* INITIAL STARTUP WINDOW */
