@@ -17,19 +17,20 @@ body {
     background-size: cover;
     font-family: 'Press Start 2P';
     color: white; 
+    height: 100%;
 }
 
 /* INITIAL STARTUP WINDOW */
 
 .start-window {
     display: none;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     padding: 5px;
-    justify-content: center;
     text-align: center;
     background: url(/images/galaxy-bg2.gif) 100%;
     background-size: cover;
@@ -59,15 +60,15 @@ body {
 
 #first-p {
     margin-top: 5%;
-    margin-left: 10%;
     margin-right: 10%;
+    margin-left: 10%;
     line-height: 4rem;
 }
 
 .heading {
     display: flex;
-    justify-content: center;
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 /* AUDIO SETTINGS */
@@ -80,7 +81,7 @@ audio {
     width: 7em;
     border-radius: 50px;
     font-family: 'Press Start 2P';
-    z-index: 6;
+    z-index: 2;
 } 
 
 audio::-webkit-media-controls-current-time-display,
@@ -103,32 +104,36 @@ audio::-webkit-media-controls-panel:hover {
     width: 7rem;
     border-radius: 50px;
     font-family: 'Press Start 2P';
-    z-index: 3;
+    z-index: 2;
 }
 
 /* MAIN GAME WINDOW */
 
 h1 {
     text-align: center;
-    margin-top: 4.5rem;
+    margin-top: 6%;
+}
+
+
+#battle-display {
+    margin-left: -20%;
 }
 
 .players {
     display: flex;
     justify-content: start;
     flex-direction: column; 
-    margin-top: 7rem;
-    margin-left: 3rem;
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 25%;
 }
 
 #cat {
-    margin-left: 5%;
     height: 100px;
     width: 162px;
 }
 
 #dog {
-    margin-left: 5%;
     height: 75px;
     width: 150px;
 }
@@ -149,8 +154,8 @@ h1 {
     align-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 25vw;
-    height: 22vh;
+    width: 15vw;
+    height: 12vh;
 }
 
 .game-board.x .box:not(.x):not(.y):hover {
@@ -191,9 +196,9 @@ h1 {
 
 #playButton {
     position: fixed;
-    margin-top: 10%;
     height: 3rem;
     width: 7rem;
+    margin-top: 22%;
     border-radius: 50px;
     background-color: white;
     color: black;
@@ -210,8 +215,8 @@ h1 {
 /* WIN / LOSE / DRAW WINDOW */
 
 .win-message {
-    display: none;
     position: fixed;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
