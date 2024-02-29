@@ -1,4 +1,6 @@
+
 /* MAIN SETTINGS */
+
 
 * {
     box-sizing: border-box;
@@ -15,9 +17,6 @@ body {
     background-size: cover;
     font-family: 'Press Start 2P';
     color: white; 
-    height: 100%;
-    overflow-y: hidden;
-
 }
 
 /* INITIAL STARTUP WINDOW */
@@ -54,12 +53,12 @@ body {
   
 
 #initial-header {
-    display:fixed;
+    display: fixed;
     margin-top: 10%;
 }
 
 #first-p {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
     line-height: 4rem;
@@ -191,8 +190,8 @@ h1 {
 /* PLAY BUTTON SETTINGS */
 
 #playButton {
-    grid-column: 2/3;
-    margin-top: 6%;
+    position: fixed;
+    margin-top: 10%;
     height: 3rem;
     width: 7rem;
     border-radius: 50px;

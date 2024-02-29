@@ -28,6 +28,12 @@ function displayGameWindow() {
 
 }
 
+// Creating a function that will remove the play button after being clicked.
+
+playButton.addEventListener('click', () => {
+
+  playButton.style.display = 'none';
+})
 
 // Creating a function that will display a player's character once the player hovers over a box with their character. This can only happen if it is the player's turn.
 
