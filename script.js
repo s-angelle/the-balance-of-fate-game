@@ -20,6 +20,7 @@ const playButton = document.getElementById('playButton');
 let isTacoDogPlayerTurn = false;
 
 
+
 // Creating a function to remove initial start-up screen. On line 169, this function is called upon when the player clicks the "play" button.
 
 function displayGameWindow() {
@@ -141,8 +142,6 @@ function handleClick(e) {
 
 // Creating a function that will "start" the game and implement the handleClick function. A for loop is also established to reset the game. On line 167, this will happen upon a player clicking the "restart" button.
 
-startPlay();
-
 function startPlay() {
 
     isTacoDogPlayerTurn = false;
@@ -162,6 +161,8 @@ function startPlay() {
     winMessage.classList.remove('show');
     
 }    
+
+startPlay();
 
 
 // Adding event listeners to that will implement previously mentioned functions when a player clicks either the "play" or "restart" button.
