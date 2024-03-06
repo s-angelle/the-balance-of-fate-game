@@ -73,11 +73,14 @@ body {
 /* AUDIO SETTINGS */
 
 audio {
-    position: fixed;
+    /* position: fixed;
     top: 3%;
-    left: 91%;
-    height: 3rem;
-    width: 7em;
+    left: 91%; */
+    margin-top: 4%;
+    flex-grow: 0;
+    margin-right: 1%;
+    height:2.7rem;
+    width: 9.5rem;
     border-radius: 50px;
     font-family: 'Press Start 2P';
     z-index: 2;
