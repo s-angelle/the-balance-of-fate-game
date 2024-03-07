@@ -10,13 +10,16 @@
     --character-size: calc(var(var(--box-size) * .8));
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     background: url(/images/space.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Press Start 2P';
     color: white; 
-    height: 100%;
 }
 
 /* INITIAL STARTUP WINDOW */
@@ -76,7 +79,8 @@ audio {
     /* position: fixed;
     top: 3%;
     left: 91%; */
-    margin-top: 4%;
+    align-self: flex-start;
+    margin-top: -1%;
     flex-grow: 0;
     margin-right: 1%;
     height:2.7rem;
@@ -106,14 +110,15 @@ audio::-webkit-media-controls-panel:hover {
     width: 7rem;
     border-radius: 50px;
     font-family: 'Press Start 2P';
-    z-index: 2;
+    z-index: 1;
 }
 
 /* MAIN GAME WINDOW */
 
 h1 {
     text-align: center;
-    margin-top: 6%;
+    margin-top: 8%;
+    margin-left: 10%;
 }
 
 
@@ -128,6 +133,7 @@ h1 {
     margin-top: 2%;
     margin-left: 10%;
     width: 25%;
+    text-align: center;
 }
 
 #cat {
@@ -269,23 +275,65 @@ h1 {
 
 /* SETTINGS FOR IPADS + TABLETS */
 
-@media (767px < width < 1025px ) {
+@media (767px < width < 1024px ) {
+
+    body {
+        height: 100%;
+    }
+
+    audio {
+    align-self: flex-start;
+    margin-top: -3%;
+    flex-grow: 0;
+    margin-right: 1%;
+}
 
     #initial-header {
      font-size: 1em;
      margin-top: 28%;
      white-space: nowrap;
     }
-    
-    #playButton {
-        position: absolute;
-        margin-top: 35%;
+
+    .heading {
+        margin-top: 7%;
     }
+
     
     #first-p {
       font-size: .82em;
       line-height: 2.5rem;
     }
+
+    #playButton {
+        position: absolute;
+        margin-top: 35%;
+    }
+
+    #battle-display {
+        width: 50%;
+        margin-left: 5%;
+        font-size: 16px;
+    }
     
 
+    .players {
+        margin-left: 2%;
+        text-align: center;
+    }
+
+
+    #cat {
+        height: 6rem;
+        width: 7rem;
+    }
+
+    #dog {
+        height: 4rem;
+        width: 7rem;
+    }
+
+    .box {
+        height: 10rem;
+        width: 10rem;
+    }
 }
